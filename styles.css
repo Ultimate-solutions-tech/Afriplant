@@ -1,0 +1,414 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.container {
+    width: 100%; /* Increased width for desktop view */
+    height: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+}
+
+header p {
+    font-size: 18px;
+    color: #0a0202;
+}
+
+header h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0a0202;
+}
+
+.profile-icon img {
+    width: 70px; /* Increased icon size */
+    height: 70px;
+    border-radius: 50%;
+    background-color: #EDFAF1;
+    background-size: contain;
+    margin-right: 40px;
+}
+
+.search-bar {
+    margin: 20px 15px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.info-banner {
+    display: flex;
+    height: 250px;
+    background: rgb(0,59,20);
+    background: linear-gradient(90deg, rgba(0,59,20,1) 0%, rgba(0,59,20,1) 41%, rgba(0,176,59,1) 100%);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.info-text {
+    flex: 1;
+   align-content: center;
+   padding: 0 50px;
+}
+
+.info-text h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.info-text p {
+    font-size: 18px;
+    color: white;
+    padding-top: 15px;
+}
+
+.info-image img {
+    width: 200px; /* Increased image size */
+    height: 150px;
+    border-radius: 10px;
+   padding-right: 50px;
+}
+
+.main-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 95%;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.button {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    justify-items: center;
+}
+
+.button img {
+    width: 40px; /* Increased icon size */
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.button p {
+    font-size: 16px;
+    color: #333;
+}
+
+.ask-botanist {
+    display: flex;
+    align-items: center;
+    background-color: #EDFAF1;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 40px;
+    height: 200px;
+    justify-content: center;
+}
+
+.ask-botanist h3 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #0a0202;
+}
+
+.ask-botanist p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 15px;
+}
+
+.botanist-icon img {
+    width: 100px; /* Increased icon size */
+    height: 100px;
+    margin-left: 10px;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.bottom-nav .nav-item img {
+    width: 70px;
+    height: 70px;
+}
+
+.bottom-nav .nav-item-2 img {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+}
+
+/* Responsive Styles */
+
+/* Small Mobile Devices (max-width: 600px) */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h2 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .info-banner {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .info-text {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .info-image img {
+        width: 100%;
+        height: auto;
+        padding-right: 0;
+    }
+
+    .main-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .button p {
+        font-size: 14px;
+    }
+
+    .ask-botanist {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .ask-botanist h3 {
+        font-size: 20px;
+    }
+
+    .ask-botanist p {
+        font-size: 14px;
+    }
+
+    .botanist-icon img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .bottom-nav .nav-item img, .bottom-nav .nav-item-2 img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Medium Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px;
+    }
+
+    header h2 {
+        font-size: 28px;
+    }
+
+    .info-text h3 {
+        font-size: 24px;
+    }
+
+    .info-text p {
+        font-size: 16px;
+    }
+
+    .info-image img {
+        width: 150px;
+        height: 100px;
+    }
+
+    .button img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .button p {
+        font-size: 14px;
+    }
+
+    .ask-botanist h3 {
+        font-size: 22px;
+    }
+
+    .ask-botanist p {
+        font-size: 16px;
+    }
+
+    .botanist-icon img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .bottom-nav .nav-item img, .bottom-nav .nav-item-2 img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Large Devices (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 60px;
+    }
+
+    header h2 {
+        font-size: 32px;
+    }
+
+    .info-text h3 {
+        font-size: 26px;
+    }
+
+    .info-text p {
+        font-size: 18px;
+    }
+
+    .info-image img {
+        width: 180px;
+        height: 120px;
+    }
+
+    .button img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .button p {
+        font-size: 15px;
+    }
+
+    .ask-botanist h3 {
+        font-size: 24px;
+    }
+
+    .ask-botanist p {
+        font-size: 17px;
+    }
+
+    .botanist-icon img {
+        width: 95px;
+        height: 95px;
+    }
+
+    .bottom-nav .nav-item img, .bottom-nav .nav-item-2 img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Slider Styles */
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    display: flex;
+}
+
+.slide {
+    display: none;
+    flex: 1;
+    transition: transform 0.5s ease;
+    animation: fadeIn 0.5s ease;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slider-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.slider-dots .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider-dots .dot.active {
+    background-color: #4CAF50;
+}
+
+/* Animation for fading in slides */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Footer Icon Animation */
+.bottom-nav .nav-item img, .bottom-nav .nav-item-2 img {
+    transition: transform 0.3s ease;
+}
+
+.bottom-nav .nav-item img:hover, .bottom-nav .nav-item-2 img:hover {
+    transform: scale(1.1); /* Zoom effect */
+}
+
+/* Button hover animations */
+.main-buttons .button {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.main-buttons .button:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+}
+
+/* Ask Botanist hover animation */
+.ask-botanist {
+    transition: transform 0.3s ease;
+}
+
+.ask-botanist:hover {
+    transform: scale(1.05);
+}
+
+
+/* Garden css */

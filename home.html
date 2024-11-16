@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriPlant App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div>
+            <p>Hi</p>
+            <h2>Welcome Back</h2>
+            </div>
+            <div class="profile-icon">
+                <!-- Profile Icon Placeholder -->
+                <img src="images/user-settings-02.png" alt="Profile Icon">
+            </div>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Plants">
+        </div>
+
+        <!-- How to Use Section -->
+        <!-- How to Use Section (Slider) -->
+<div class="info-banner">
+    <div class="slider">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <div class="info-text">
+                <h3>How to use AfriPlant Identifier</h3>
+                <p>Learn how to take plant pictures for accurate identification.</p>
+            </div>
+            <div class="info-image">
+                <img src="images/Frame 62.png" alt="Info Image 1"> 
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+            <div class="info-text">
+                <h3>Common Plant Diseases</h3>
+                <p>Check out the common plant diseases with practical Solutions and Treatments.</p>
+            </div>
+            <div class="info-image">
+                <img src="images/Frame 62 (1).png" alt="Info Image 2">
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide">
+            <div class="info-text">
+                <h3>Set a Reminder</h3>
+                <p>Get instant notifications on all your plantations</p>
+            </div>
+            <div class="info-image">
+                <img src="images/Frame 62 (2).png" alt="Info Image 3">
+            </div>
+        </div>
+    </div>
+    <!-- Slider Navigation Dots -->
+    <div class="slider-dots">
+        <span class="dot active" onclick="showSlide(0)"></span>
+        <span class="dot" onclick="showSlide(1)"></span>
+        <span class="dot" onclick="showSlide(2)"></span>
+    </div>
+</div>
+
+
+        <!-- Main Buttons -->
+        <div class="main-buttons">
+            <div class="button">
+                <!-- Plant Identifier Icon Placeholder -->
+                <img src="images/plant-identifier.png" alt="Plant Identifier">
+                <p>Plant Identifier</p>
+            </div>
+            <div class="button">
+                <!-- Plant Diagnose Icon Placeholder -->
+                <img src="images/plant-diagnose.png" alt="Plant Diagnose">
+                <p>Plant Diagnose</p>
+            </div>
+            <div class="button">
+                <!-- My Garden Icon Placeholder -->
+                <img src="images/my-garden.png" alt="My Garden">
+                <p>My Garden</p>
+            </div>
+            <div class="button">
+                <!-- Stores & Vendors Icon Placeholder -->
+                <a href="store_product.html"><img src="images/stores-vendor.png" alt="Stores & Vendors"></a>
+                <p>Stores & Vendors</p>
+            </div>
+        </div>
+
+        <!-- Ask a Botanist Section -->
+        <div class="ask-botanist">
+            <div class="botanist-text">
+                <h3>Ask a Botanist</h3>
+                <p>Our AI powered Botanist is ready to assist you on any plant-related problem.</p>
+            </div>
+            <div class="botanist-icon">
+                <!-- Botanist Icon Placeholder -->
+                <a href="public/index.html"><img src="images/user-settings-02.png" alt="Botanist Icon"></a> 
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <footer class="bottom-nav">
+            <div class="nav-item"><img src="images/Home.png" alt=""></div>
+            <div class="nav-item"><img src="images/Diagnose.png" alt=""></div>
+            <div class="nav-item-2"><a href="https://afriplant-identifier.vercel.app"><img src="images/Scan camera.png" alt=""></a></div>
+            <div class="nav-item"><img src="images/library.png" alt=""></div>
+            <div class="nav-item"><img src="images/Botanist.png" alt=""></div>
+        </footer>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+    
+        function showSlide(index) {
+            // Remove active class from all slides and dots
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+    
+            // Set the current slide and dot to active
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+    
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+    
+        // Auto-slide every 3 seconds
+        setInterval(nextSlide, 3000);
+    
+        // Dot click event to navigate to the selected slide
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+    </script>
+    
+</body>
+</html>
