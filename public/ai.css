@@ -252,3 +252,75 @@ button img {
         height: 70px;
     }
 }
+
+@media (max-width: 375px) {
+    body {
+        padding: 10px;
+        font-size: 14px; /* Adjust font size for better readability */
+    }
+
+    .chat-container {
+        width: 80%; /* Full width for the device */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Softer shadow */
+        border-radius: 15px; /* Adjust border radius */
+    }
+
+    .chat-header h2 {
+        font-size: 16px; /* Adjust header font size */
+    }
+
+    .chat-header p {
+        font-size: 12px; /* Adjust description font size */
+    }
+
+    #chat-box {
+        height: 200px; /* Shorter chat box for smaller screens */
+        padding: 8px;
+        font-size: 13px; /* Adjust font size for messages */
+    }
+
+    input[type="text"] {
+        font-size: 12px; /* Smaller font for input */
+        padding: 8px; /* Adjust padding */
+        margin-right: 4px; /* Adjust margin for spacing */
+    }
+
+    .bottom-nav {
+        padding: 10px 0;
+        flex-direction: row; /* Stack navigation items vertically */
+    }
+
+    .bottom-nav .nav-item img,
+    .bottom-nav .nav-item-2 img {
+        width: 60px; /* Smaller icon size for better fit */
+        height: 60px;
+    }
+
+    .bottom-nav .nav-item-2 img {
+        width: 80px; /* Slightly larger central icon */
+        height: 80px;
+    }
+
+    .bottom-nav .nav-item img:hover,
+    .bottom-nav .nav-item-2 img:hover {
+        transform: scale(1.05); /* Subtle zoom for touch devices */
+    }
+
+    button img {
+        width: 20px; /* Smaller button icons */
+        height: 20px;
+    }
+
+    .upload-icon {
+        width: 20px; /* Resize upload icon */
+        height: 20px;
+    }
+
+    .chat-response h3 {
+        font-size: 14px; /* Adjust font size for subheadings */
+    }
+
+    .chat-response .step {
+        font-size: 12px; /* Adjust step details size */
+    }
+}
