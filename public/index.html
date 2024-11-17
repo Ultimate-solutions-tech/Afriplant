@@ -8,28 +8,32 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
-  <div class="chat-container">
-    <div class="chat-header">
-      <img src="images/user-settings-02.png" alt="User Icon" class="header-icon">
-      <h2>Hi! How can I help you</h2>
-      <p>Ask any questions related to plants. I am ready to assist you.</p>
+  <div class="container">
+    <div class="chat-container">
+      <div class="chat-header">
+        <img src="images/user-settings-02.png" alt="User Icon" class="header-icon">
+        <h2>Hi! How can I help you</h2>
+        <p>Ask any questions related to plants. I am ready to assist you.</p>
+      </div>
+      <div id="chat-box"></div>
+      <div class="input-container">
+        <!-- New upload icon image element -->
+        <img src="images/image-01.png" alt="Upload Icon" id="upload-icon" class="upload-icon">
+        <input type="file" id="image-upload" accept="image/*" style="display: none;">
+        <input type="text" id="user-input" placeholder="Type here...">
+        <button id="send-button"><img src="images/navigation-03.png" alt="Send Icon"></button>
+      </div>
     </div>
-    <div id="chat-box"></div>
-    <div class="input-container">
-      <!-- New upload icon image element -->
-      <img src="images/image-01.png" alt="Upload Icon" id="upload-icon" class="upload-icon">
-      <input type="file" id="image-upload" accept="image/*" style="display: none;">
-      <input type="text" id="user-input" placeholder="Type here...">
-      <button id="send-button"><img src="images/navigation-03.png" alt="Send Icon"></button>
-    </div>
+
+    <footer class="bottom-nav">
+      <div class="nav-item"><img src="images/Home.png" alt=""></div>
+      <div class="nav-item"><img src="images/Diagnose.png" alt=""></div>
+      <div class="nav-item-2"><a href="https://afriplant-identifier.vercel.app"><img src="images/Scan camera.png" alt=""></a></div>
+      <div class="nav-item"><img src="images/library.png" alt=""></div>
+      <div class="nav-item"><img src="images/Botanist.png" alt=""></div>
+  </footer>
   </div>
-  <footer class="bottom-nav">
-    <div class="nav-item"><img src="images/Home.png" alt=""></div>
-    <div class="nav-item"><img src="images/Diagnose.png" alt=""></div>
-    <div class="nav-item-2"><a href="https://afriplant-identifier.vercel.app"><img src="images/Scan camera.png" alt=""></a></div>
-    <div class="nav-item"><img src="images/library.png" alt=""></div>
-    <div class="nav-item"><img src="images/Botanist.png" alt=""></div>
-</footer>
+  
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {

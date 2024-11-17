@@ -2,19 +2,36 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    background-color: #ddffdd;
+    background-color: #f0f0f0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;  
+    height: 100%;
+    width: 100%;
+    max-width: 100%; 
+    margin: 0; 
 }
 
+/* Container Styling */
+.container {
+    align-items: center;
+    max-width: 100%;
+    width: 97%; /* Full width inside max-width for responsiveness */
+    height: 100%;
+    /* margin: 15px; */
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* Padding around the container */
+}
+
+/* Chat Container */
 .chat-container {
     width: 90%;
     max-width: 400px;
     border: 1px solid #ccc;
     margin-top: 20px;
+    margin-left: 33%;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -153,15 +170,15 @@ button img {
     height: 24px;
 }
 
+/* Bottom Navigation */
 .bottom-nav {
     display: flex;
     justify-content: space-around;
     border-top: 1px solid #ddd;
     margin-top: 20px;
-    padding: 20px;
-    align-items: center;
-    background-color: #ddffdd;;
     padding: 10px 0;
+    align-items: center;
+    background-color: #fff;
     position: relative;
     width: 100%;
 }
@@ -177,14 +194,6 @@ button img {
     padding: 0;
 }
 
-/* Responsive Design */
-@media (max-width: 480px) {
-    .chat-container {
-        width: 95%;
-        padding: 10px;
-    }
-}
-
 /* Footer Icon Animation */
 .bottom-nav .nav-item img, .bottom-nav .nav-item-2 img {
     transition: transform 0.3s ease;
@@ -192,4 +201,54 @@ button img {
 
 .bottom-nav .nav-item img:hover, .bottom-nav .nav-item-2 img:hover {
     transform: scale(1.1); /* Zoom effect */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .chat-container {
+        margin-left: 5%; /* Adjust margin for tablets */
+        width: 80%; /* Reduce width for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Add padding for mobile */
+    }
+
+    .chat-container {
+        width: 95%; /* Increase width on smaller screens */
+        padding: 10px;
+    }
+
+    .bottom-nav {
+        padding: 15px 0;
+    }
+
+    .bottom-nav .nav-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .bottom-nav .nav-item-2 img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-container {
+        width: 100%; /* Full width for mobile */
+        padding: 5px; /* Less padding on mobile */
+    }
+
+    .bottom-nav .nav-item img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .bottom-nav .nav-item-2 img {
+        width: 70px;
+        height: 70px;
+    }
 }
