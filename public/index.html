@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Botanist Chatbot</title>
   <link rel="stylesheet" href="ai.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
   <div class="chat-container">
@@ -22,66 +23,77 @@
       <button id="send-button"><img src="images/navigation-03.png" alt="Send Icon"></button>
     </div>
   </div>
+  <footer class="bottom-nav">
+    <div class="nav-item"><img src="images/Home.png" alt=""></div>
+    <div class="nav-item"><img src="images/Diagnose.png" alt=""></div>
+    <div class="nav-item-2"><a href="https://afriplant-identifier.vercel.app"><img src="images/Scan camera.png" alt=""></a></div>
+    <div class="nav-item"><img src="images/library.png" alt=""></div>
+    <div class="nav-item"><img src="images/Botanist.png" alt=""></div>
+</footer>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-  const chatBox = document.getElementById("chat-box");
-  const userInput = document.getElementById("user-input");
-  const sendButton = document.getElementById("send-button");
-  const imageUpload = document.getElementById("image-upload");
+    const chatBox = document.getElementById("chat-box");
+    const userInput = document.getElementById("user-input");
+    const sendButton = document.getElementById("send-button");
+    const imageUpload = document.getElementById("image-upload");
+    const uploadIcon = document.getElementById("upload-icon");
 
-  function addMessageToChat(content, isUser = false) {
-      const messageElement = document.createElement("div");
-      messageElement.classList.add(isUser ? "user-message" : "bot-message");
-      messageElement.innerHTML = content;
-      chatBox.appendChild(messageElement);
-      chatBox.scrollTop = chatBox.scrollHeight;
-  }
+    function addMessageToChat(content, isUser = false) {
+        const messageElement = document.createElement("div");
+        messageElement.classList.add(isUser ? "user-message" : "bot-message");
+        messageElement.innerHTML = content;
+        chatBox.appendChild(messageElement);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
 
-  sendButton.addEventListener("click", async () => {
-      const message = userInput.value.trim();
-      if (message) {
-          addMessageToChat(`<p>${message}</p>`, true);
-          userInput.value = "";
+    sendButton.addEventListener("click", async () => {
+        const message = userInput.value.trim();
+        if (message) {
+            addMessageToChat(`<p>${message}</p>`, true);
+            userInput.value = "";
 
-          try {
-              const response = await fetch("/chat", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ message }),
-              });
-              const data = await response.json();
-              addMessageToChat(data.response);
-          } catch (error) {
-              addMessageToChat("<p>Error: Could not get response. Please try again.</p>");
-          }
-      }
-  });
+            try {
+                const response = await fetch("/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message }),
+                });
+                const data = await response.json();
+                addMessageToChat(data.response);
+            } catch (error) {
+                addMessageToChat("<p>Error: Could not get response. Please try again.</p>");
+            }
+        }
+    });
 
-  imageUpload.addEventListener("change", async () => {
-      const file = imageUpload.files[0];
-      if (file) {
-          const reader = new FileReader();
-          reader.onloadend = async () => {
-              const base64Image = reader.result.split(",")[1];
-              const mimeType = "data:image/jpeg;base64," + base64Image;
-              
-              addMessageToChat(`<img src="${reader.result}" alt="Uploaded Image" style="max-width: 200px;"/>`, true);
+    uploadIcon.addEventListener("click", () => {
+        imageUpload.click(); // Simulate a click to open the file dialog
+    });
 
-              try {
-                  const response = await fetch("/chat-image", {
-                      method: "POST",
-                      headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify({ image: mimeType }),
-                  });
-                  const data = await response.json();
-                  addMessageToChat(data.response);
-              } catch (error) {
-                  addMessageToChat("<p>Error: Could not get response. Please try again.</p>");
-              }
-          };
-          reader.readAsDataURL(file);
-      }
-  });
+    imageUpload.addEventListener("change", async () => {
+        const file = imageUpload.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = async () => {
+                const base64Image = reader.result.split(",")[1];
+                addMessageToChat(`<img src="${reader.result}" alt="Uploaded Image" style="max-width: 200px;"/>`, true);
+
+                try {
+                    const response = await fetch("/chat-image", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ image: base64Image }),
+                    });
+                    const data = await response.json();
+                    addMessageToChat(data.response);
+                } catch (error) {
+                    addMessageToChat("<p>Error: Could not analyze the image. Please try again.</p>");
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+    });
 });
   </script>
 </body>

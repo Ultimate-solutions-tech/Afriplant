@@ -2,21 +2,27 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
+    background-color: #ddffdd;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
+    margin: 0;  
 }
 
 .chat-container {
     width: 90%;
     max-width: 400px;
     border: 1px solid #ccc;
+    margin-top: 20px;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #fff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .chat-header {
@@ -52,6 +58,7 @@ body {
     padding: 10px;
     margin-bottom: 10px;
     background-color: #f9f9f9;
+    white-space: pre-wrap;
 }
 
 .chat-box {
@@ -62,6 +69,7 @@ body {
     border: 1px solid #ddd;
     padding: 10px;
     background-color: #f9f9f9;
+    white-space: pre-wrap;
 }
 
 .user-message, .bot-message {
@@ -77,6 +85,7 @@ body {
 
 .bot-message {
     background-color: #f1f1f1;
+    white-space: pre-line;
 }
 
 .chat-response h3 {
@@ -116,7 +125,7 @@ body {
 }
 
 input[type="file"] {
-    display: none; /* Hide file input */
+    display: visible; /* Hide file input */
 }
 
 input[type="text"] {
@@ -144,10 +153,43 @@ button img {
     height: 24px;
 }
 
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    padding: 20px;
+    align-items: center;
+    background-color: #ddffdd;;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+.bottom-nav .nav-item img {
+    width: 70px;
+    height: 70px;
+}
+
+.bottom-nav .nav-item-2 img {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 480px) {
     .chat-container {
         width: 95%;
         padding: 10px;
     }
+}
+
+/* Footer Icon Animation */
+.bottom-nav .nav-item img, .bottom-nav .nav-item-2 img {
+    transition: transform 0.3s ease;
+}
+
+.bottom-nav .nav-item img:hover, .bottom-nav .nav-item-2 img:hover {
+    transform: scale(1.1); /* Zoom effect */
 }
