@@ -23,6 +23,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px; /* Padding around the container */
+    padding-bottom: 0;
 }
 
 /* Chat Container */
@@ -171,35 +172,49 @@ button img {
 }
 
 /* Bottom Navigation */
+
 .bottom-nav {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     border-top: 1px solid #ddd;
-    margin-top: 20px;
-    padding: 10px 0;
-    align-items: center;
-    background-color: #fff;
+    margin-top: 120px;
+    margin-bottom: 0px;
+    padding-top: 10px;
     position: relative;
-    width: 100%;
 }
 
 .bottom-nav .nav-item img {
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
 }
 
-.bottom-nav .nav-item-2 img {
+.bottom-nav .nav-item h4 {
+    color: #00b03b;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.bottom-nav .nav-item-scan img {
     width: 100px;
     height: 100px;
-    padding: 0;
+    margin-left: 10px;
+    position: relative;
+    bottom: 50px;
+    right: 3px;
 }
 
+a {
+    text-decoration: none;
+}
+
+
 /* Footer Icon Animation */
-.bottom-nav .nav-item img, .bottom-nav .nav-item-2 img {
+.bottom-nav .nav-item img, .bottom-nav .nav-item-scan img {
     transition: transform 0.3s ease;
 }
 
-.bottom-nav .nav-item img:hover, .bottom-nav .nav-item-2 img:hover {
+.bottom-nav .nav-item img:hover, .bottom-nav .nav-item-scan img:hover {
     transform: scale(1.1); /* Zoom effect */
 }
 
@@ -221,35 +236,12 @@ button img {
         padding: 10px;
     }
 
-    .bottom-nav {
-        padding: 15px 0;
-    }
-
-    .bottom-nav .nav-item img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .bottom-nav .nav-item-2 img {
-        width: 80px;
-        height: 80px;
-    }
 }
 
 @media (max-width: 480px) {
     .chat-container {
         width: 80%; /* Full width for mobile */
         padding: 5px; /* Less padding on mobile */
-    }
-
-    .bottom-nav .nav-item img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .bottom-nav .nav-item-2 img {
-        width: 70px;
-        height: 70px;
     }
 }
 
@@ -260,9 +252,11 @@ button img {
     }
 
     .chat-container {
-        width: 80%; /* Full width for the device */
+        width: 75%; /* Full width for the device */
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Softer shadow */
         border-radius: 15px; /* Adjust border radius */
+        position: relative;
+        left: 10px;
     }
 
     .chat-header h2 {
@@ -285,32 +279,6 @@ button img {
         margin-right: 4px; /* Adjust margin for spacing */
     }
 
-    .bottom-nav {
-        padding: 10px 0;
-        flex-direction: row; /* Stack navigation items vertically */
-    }
-
-    .bottom-nav .nav-item img,
-    .bottom-nav .nav-item-2 img {
-        width: 60px; /* Smaller icon size for better fit */
-        height: 60px;
-    }
-
-    .bottom-nav .nav-item-2 img {
-        width: 80px; /* Slightly larger central icon */
-        height: 80px;
-    }
-
-    .bottom-nav .nav-item img:hover,
-    .bottom-nav .nav-item-2 img:hover {
-        transform: scale(1.05); /* Subtle zoom for touch devices */
-    }
-
-    button img {
-        width: 20px; /* Smaller button icons */
-        height: 20px;
-    }
-
     .upload-icon {
         width: 20px; /* Resize upload icon */
         height: 20px;
@@ -324,3 +292,27 @@ button img {
         font-size: 12px; /* Adjust step details size */
     }
 }
+
+@media only screen and (max-width: 375px) {
+.bottom-nav {
+    flex-direction: row;
+    gap: 5px;
+    padding-top: 5px;
+    position: relative;
+    top: 10px;
+    margin-top: 90px;
+}
+.bottom-nav .nav-item img,
+.bottom-nav .nav-item-scan img {
+    width: 30px;
+    height: 30px;
+}
+.bottom-nav .nav-item-scan img {
+    width: 70px;
+    height: 70px;
+}
+.bottom-nav .nav-item h4 {
+    font-size: 10px;
+}
+}
+
