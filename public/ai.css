@@ -22,7 +22,7 @@ body {
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px; /* Padding around the container */
+    padding: 0px; /* Padding around the container */
     margin-bottom: 0;
 }
 
