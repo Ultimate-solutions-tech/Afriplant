@@ -23,7 +23,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px; /* Padding around the container */
-    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* Chat Container */
@@ -247,7 +247,7 @@ a {
 
 @media (max-width: 375px) {
     body {
-        padding: 5px;
+        padding: 0px;
         font-size: 14px; /* Adjust font size for better readability */
     }
 
