@@ -239,6 +239,9 @@ a {
 }
 
 @media (max-width: 480px) {
+    .container {
+        height: 100%;
+    }
     .chat-container {
         width: 80%; /* Full width for mobile */
         padding: 5px; /* Less padding on mobile */
@@ -251,7 +254,11 @@ a {
         height: 100%;
         font-size: 14px; /* Adjust font size for better readability */
     }
-
+    .container {
+        height: 100%;
+        margin-bottom: 0px;
+        padding: 0px;
+    }
     .chat-container {
         width: 75%; /* Full width for the device */
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Softer shadow */
