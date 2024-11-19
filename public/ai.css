@@ -31,7 +31,7 @@ body {
     width: 90%;
     max-width: 400px;
     border: 1px solid #ccc;
-    margin-top: 40px;
+    margin-top: 80px;
     margin-left: 33%;
     padding: 15px;
     border-radius: 10px;
@@ -266,7 +266,6 @@ a {
         border-radius: 15px; /* Adjust border radius */
         position: relative;
         left: 10px;
-        top: 50;
     }
 
     .chat-header h2 {
