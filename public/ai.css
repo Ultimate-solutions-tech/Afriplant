@@ -266,7 +266,7 @@ a {
         border-radius: 15px; /* Adjust border radius */
         position: relative;
         left: 10px;
-        top: 20;
+        top: 50;
     }
 
     .chat-header h2 {
