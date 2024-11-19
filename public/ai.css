@@ -261,9 +261,10 @@ a {
         bottom: 0;
     }
     .chat-container {
-        width: 75%; /* Full width for the device */
+        width: 80%; /* Full width for the device */
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Softer shadow */
         border-radius: 15px; /* Adjust border radius */
+        margin-top: 40px;
         position: relative;
         left: 10px;
     }
